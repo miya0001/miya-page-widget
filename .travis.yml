@@ -12,8 +12,7 @@ env:
 - WP_VERSION=latest WP_MULTISITE=0
 after_success:
 - sed -i -e "s/nightly/${TRAVIS_TAG}/" singular-widget.php
-- curl https://raw.githubusercontent.com/miya0001/auto-build/master/auto-build.sh
-  | bash
+- curl https://raw.githubusercontent.com/miya0001/auto-build/master/auto-build.sh | bash
 before_script:
 - bash bin/install-wp-tests.sh wordpress_test root '' localhost $WP_VERSION
 - composer install
