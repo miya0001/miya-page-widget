@@ -1,8 +1,8 @@
-# Singuar Widget
+# Singular Widget
 
 [![Build Status](https://travis-ci.org/miya0001/singular-widget.svg?branch=master)](https://travis-ci.org/miya0001/singular-widget)
 
-A WordPress plugin which displays the single content in the widget.
+A WordPress plugin which displays the content in the widget.
 
 ![](https://www.evernote.com/l/ABWGF1ygaVdNkqa-4bs7AD7nHLeWqSbhJWoB/image.png)
 
