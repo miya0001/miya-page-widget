@@ -97,7 +97,7 @@ class Singular_Widget extends WP_Widget
 		$tpl = $this->template();
 
 		$tpl = str_replace( '%post_title%', esc_html( $p->post_title ), $tpl );
-		$tpl = str_replace( '%post_thumb%', $post_thumb, $tpl );
+		$tpl = str_replace( '%post_thumbnail%', $post_thumb, $tpl );
 		$tpl = str_replace( '%post_url%', esc_url( get_permalink( $pid ) ), $tpl );
 		$tpl = str_replace( '%post_excerpt%', esc_html( $p->post_excerpt ), $tpl );
 		$tpl = str_replace( '%class%', join( ' ', $class ), $tpl );
@@ -108,9 +108,9 @@ class Singular_Widget extends WP_Widget
 	private function template()
 	{
 		$html = '<section class="%class%"><div class="singular-widget-container">';
-		$html .= '<div class="post-thumbnail"><a href="%post_url%">%post_thumb%</a></div>';
+		$html .= '<div class="post-thumbnail"><a href="%post_url%">%post_thumbnail%</a></div>';
 		$html .= '<div class="post-title"><a href="%post_url%">%post_title%</a></div>';
-		$html .= '<div class="post-excerpt" style="font-size: 90%; color: #555555;">%post_excerpt%</div>';
+		$html .= '<div class="post-excerpt">%post_excerpt%</div>';
 		$html .= '</div></section>';
 
 		return apply_filters( "singular_widget_template", $html );
