@@ -1,11 +1,11 @@
 <?php
 /*
-Plugin Name: Singular Widget
-Description: Displays a content in the widget.
+Plugin Name: Miya Page Widget
+Description: Displays the content in the widget.
 Author: Takayuki Miyauchi
 Version: nightly
 Author URI: https://miya.io/
-Plugin URI: https://github.com/miya0001/singular-widget
+Plugin URI: https://github.com/miya0001/miya-page-widget
 */
 
 require_once( dirname( __FILE__ ) . '/vendor/autoload.php' );
@@ -13,13 +13,13 @@ require_once( dirname( __FILE__ ) . '/vendor/autoload.php' );
 add_action( 'init', function() {
 	$plugin_slug = plugin_basename( __FILE__ );
 	$gh_user = 'miya0001';
-	$gh_repo = 'singular-widget';
+	$gh_repo = 'miya-page-widget';
 
 	// Activate automatic update.
 	new Miya\WP\GH_Auto_Updater( $plugin_slug, $gh_user, $gh_repo );
 } );
 
-class Singular_Widget extends WP_Widget
+class Miya_Page_Widget extends WP_Widget
 {
 	function __construct()
 	{
@@ -90,7 +90,7 @@ class Singular_Widget extends WP_Widget
 		$class = array(
 			$p->post_type . '-' . $pid,
 			$p->post_type,
-			'singular-widget'
+			'page-widget'
 		);
 
 		$post_thumb = get_the_post_thumbnail( $pid, 'post-thumbnail' );
@@ -107,16 +107,16 @@ class Singular_Widget extends WP_Widget
 
 	private function template()
 	{
-		$html = '<section class="%class%"><div class="singular-widget-container">';
+		$html = '<section class="%class%"><div class="page-widget-container">';
 		$html .= '<div class="post-thumbnail"><a href="%post_url%">%post_thumbnail%</a></div>';
 		$html .= '<div class="post-title"><a href="%post_url%">%post_title%</a></div>';
 		$html .= '<div class="post-excerpt">%post_excerpt%</div>';
 		$html .= '</div></section>';
 
-		return apply_filters( "singular_widget_template", $html );
+		return apply_filters( "page_widget_template", $html );
 	}
 }
 
 add_action( 'widgets_init', function() {
-	return register_widget( 'Singular_Widget' );
+	return register_widget( 'Miya_Page_Widget' );
 } );

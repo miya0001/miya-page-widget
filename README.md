@@ -1,6 +1,6 @@
-# Singular Widget
+# Miya Page Widget
 
-[![Build Status](https://travis-ci.org/miya0001/singular-widget.svg?branch=master)](https://travis-ci.org/miya0001/singular-widget)
+[![Build Status](https://travis-ci.org/miya0001/miya-page-widget.svg?branch=master)](https://travis-ci.org/miya0001/miya-page-widget)
 
 A WordPress plugin which displays the content in the widget.
 
@@ -9,8 +9,8 @@ A WordPress plugin which displays the content in the widget.
 ## Sample HTML
 
 ```
-<section class="page-2 page singular-widget">
-  <div class="singular-widget-container">
+<section class="page-2 page page-widget">
+  <div class="page-widget-container">
     <div class="post-thumbnail">
       <a href="https://..."><img src="..."></a>
     </div>
@@ -24,12 +24,12 @@ A WordPress plugin which displays the content in the widget.
 
 ## Filter Hook
 
-### singular_widget_template
+### page_widget_template
 
 Filters the template of the HTML.
 
 ```
-<section class="%class%"><div class="singular-widget-container">
+<section class="%class%"><div class="page-widget-container">
   <div class="post-thumbnail"><a href="%post_url%">%post_thumbnail%</a></div>
   <div class="post-title"><a href="%post_url%">%post_title%</a></div>
   <div class="post-excerpt">%post_excerpt%</div>
